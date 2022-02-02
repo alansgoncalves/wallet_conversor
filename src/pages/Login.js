@@ -64,7 +64,6 @@ class Login extends React.Component {
               onChange={ this.handleChange }
               data-testid="email-input"
               placeholder="example@test.com"
-              TextField
               style={ { border: 'none' } }
               autoComplete="off"
             />
@@ -80,7 +79,6 @@ class Login extends React.Component {
               onChange={ this.handleChange }
               data-testid="password-input"
               placeholder="Min 6 charaters long"
-              TextField
               style={ { border: 'none' } }
               autoComplete="off"
             />

@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { fetchResponses } from '../actions';
+import { fetchResponses, editTask } from '../actions';
 import Tabela from '../components/Tabela';
 import '../Header.css';
+
+const Alimentacao = 'Alimentação';
+let btnName = false;
 
 class Wallet extends Component {
   constructor(props) {
@@ -16,12 +19,13 @@ class Wallet extends Component {
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'Alimentação',
+      tag: Alimentacao,
       exchangeRates: {},
     };
-
     this.form = this.form.bind(this);
     this.change = this.change.bind(this);
+    this.editForm = this.editForm.bind(this);
+    this.submitChange = this.submitChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -35,6 +39,19 @@ class Wallet extends Component {
     this.setState({ [id]: value });
   }
 
+  editForm(form) {
+    this.setState({
+      id: form.id,
+      value: form.value,
+      description: form.description,
+      currency: form.currency,
+      method: form.method,
+      tag: form.tag,
+      exchangeRates: form.exchangeRates,
+    });
+    btnName = true;
+  }
+
   handleClick() {
     const { expenses, dispatchFetches } = this.props;
     dispatchFetches(this.state);
@@ -44,9 +61,25 @@ class Wallet extends Component {
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
-      tag: 'Alimentação',
+      tag: Alimentacao,
       exchangeRates: {},
     });
+    btnName = false;
+  }
+
+  submitChange() {
+    const { expenses, dispatchChangeExpense } = this.props;
+    dispatchChangeExpense(this.state);
+    this.setState({
+      id: expenses.length + 1,
+      value: '',
+      description: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: Alimentacao,
+      exchangeRates: {},
+    });
+    btnName = false;
   }
 
   form() {
@@ -81,7 +114,7 @@ class Wallet extends Component {
           <select value={ tag } id="tag" onChange={ this.change }>
             <option value="Lazer">Lazer</option>
             <option value="Trabalho">Trabalho</option>
-            <option value="Alimentação">Alimentação</option>
+            <option value={ Alimentacao }>Alimentação</option>
             <option value="Saúde">Saúde</option>
             <option value="Transporte">Transporte</option>
           </select>
@@ -96,7 +129,9 @@ class Wallet extends Component {
             autoComplete="off"
           />
         </label>
-        <button id="btn" type="button" onClick={ this.handleClick }>Adicionar despesa</button>
+        { btnName
+          ? <button id="btn" type="button" onClick={ this.submitChange }>Corrigir despesa</button>
+          : <button id="btn" type="button" onClick={ this.handleClick }>Adicionar despesa</button>}
       </form>
     );
   }
@@ -116,7 +151,7 @@ class Wallet extends Component {
             </span>
           </p>
           <p>
-            <sapan className="name-trybe">TRYBEWALLET</sapan>
+            <span className="name-trybe">TRYBEWALLET</span>
           </p>
           <p>
             <span>Despesa Total: </span>
@@ -125,7 +160,7 @@ class Wallet extends Component {
           </p>
         </div>
         { this.form() }
-        <Tabela />
+        <Tabela editForm={ this.editForm } />
       </header>
     );
   }
@@ -133,13 +168,14 @@ class Wallet extends Component {
 
 const mapStateToProps = (state) => ({
   email: state.user.email,
-  expenses: state.wallet.expenses,
   loading: state.wallet.loading,
+  expenses: state.wallet.expenses,
   currencies: state.wallet.currencies,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   dispatchFetches: (state) => dispatch(fetchResponses(state)),
+  dispatchChangeExpense: (state) => dispatch(editTask(state)),
 });
 
 Wallet.propTypes = {

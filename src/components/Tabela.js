@@ -10,7 +10,8 @@ class Tabela extends Component {
   delete(id) {
     const { dispatchDeleteExpense } = this.props;
     return (
-      <img
+      <input
+        type="image"
         src={ Delete }
         alt=""
         data-testid="delete-btn"
@@ -23,21 +24,22 @@ class Tabela extends Component {
   edit(id) {
     const { expenses, editForm } = this.props;
     return (
-      <button
-        type="button"
+      <input
+        type="image"
+        src={ Edit2 }
+        alt=""
         data-testid="edit-btn"
         onClick={ () => editForm(expenses.find((expense) => expense.id === id)) }
-      >
-        Editar
-      </button>
+        width="39px"
+      />
     );
   }
 
   render() {
     const { expenses } = this.props;
     return (
-      <div className="table-table">
-        <table className="table-tr">
+      <table className="table-table">
+        <tbody className="table-tr">
           <tr id="table-th">
             <th>Descrição</th>
             <th>Tag</th>
@@ -49,7 +51,6 @@ class Tabela extends Component {
             <th>Moedas de conversão</th>
             <th>Editar/Excluir</th>
           </tr>
-          <br />
           { expenses.map(({
             id,
             value,
@@ -74,13 +75,13 @@ class Tabela extends Component {
               </td>
               <td>{ exchangeRates[currency].name }</td>
               <td>
-                <img src={ Edit2 } alt="" width="40px" />
+                { this.edit(id) }
                 { this.delete(id) }
               </td>
             </tr>
           ))}
-        </table>
-      </div>
+        </tbody>
+      </table>
     );
   }
 }
