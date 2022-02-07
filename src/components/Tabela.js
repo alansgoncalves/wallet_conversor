@@ -11,6 +11,7 @@ class Tabela extends Component {
     const { dispatchDeleteExpense } = this.props;
     return (
       <input
+        className='delete-button'
         type="image"
         src={ Delete }
         alt=""
@@ -25,12 +26,14 @@ class Tabela extends Component {
     const { expenses, editForm } = this.props;
     return (
       <input
+        className='edit-button'
         type="image"
         src={ Edit2 }
         alt=""
         data-testid="edit-btn"
         onClick={ () => editForm(expenses.find((expense) => expense.id === id)) }
         width="39px"
+        padding="10px"
       />
     );
   }
@@ -49,7 +52,7 @@ class Tabela extends Component {
             <th>Câmbio utilizado</th>
             <th>Valor convertido</th>
             <th>Moedas de conversão</th>
-            <th>Editar/Excluir</th>
+            <th>Editar | Excluir</th>
           </tr>
           { expenses.map(({
             id,
