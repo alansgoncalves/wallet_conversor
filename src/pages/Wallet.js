@@ -144,7 +144,7 @@ class Wallet extends Component {
     return (
       <header>
         <div className="tasks1">
-          <img id="pic" src="https://lh3.googleusercontent.com/ogw/ADea4I4ptWQMWyPYpekWXyjK7UJZKOGlQRAQFstROsvkqg=s64-c-mo" alt="" width="50px" />
+        <img id="pic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEJQojzcGqO6y17GCiXa5T-Zv0V3FXkzUQNdfzWAn1-lTSzBCQV_1mWgxgsRi0k2lQICs&usqp=CAU" alt="" width="40px" height="40px" />
           <p className="parag-email">
             <span data-testid="email-field">
               { email }
