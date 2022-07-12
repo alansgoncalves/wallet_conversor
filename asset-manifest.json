@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/wallet_conversor/static/css/main.fa1c78ab.chunk.css",
-    "main.js": "/wallet_conversor/static/js/main.6b06fd5d.chunk.js",
-    "main.js.map": "/wallet_conversor/static/js/main.6b06fd5d.chunk.js.map",
+    "main.css": "/wallet_conversor/static/css/main.e7bfd6d5.chunk.css",
+    "main.js": "/wallet_conversor/static/js/main.c79cfd2a.chunk.js",
+    "main.js.map": "/wallet_conversor/static/js/main.c79cfd2a.chunk.js.map",
     "runtime-main.js": "/wallet_conversor/static/js/runtime-main.bb052a87.js",
     "runtime-main.js.map": "/wallet_conversor/static/js/runtime-main.bb052a87.js.map",
     "static/js/2.5c2475ad.chunk.js": "/wallet_conversor/static/js/2.5c2475ad.chunk.js",
     "static/js/2.5c2475ad.chunk.js.map": "/wallet_conversor/static/js/2.5c2475ad.chunk.js.map",
     "index.html": "/wallet_conversor/index.html",
-    "precache-manifest.e67f6dafc6074a59fcae0f812e99782f.js": "/wallet_conversor/precache-manifest.e67f6dafc6074a59fcae0f812e99782f.js",
+    "precache-manifest.de81948919784dd4e6c00c28d81a0bc5.js": "/wallet_conversor/precache-manifest.de81948919784dd4e6c00c28d81a0bc5.js",
     "service-worker.js": "/wallet_conversor/service-worker.js",
-    "static/css/main.fa1c78ab.chunk.css.map": "/wallet_conversor/static/css/main.fa1c78ab.chunk.css.map",
+    "static/css/main.e7bfd6d5.chunk.css.map": "/wallet_conversor/static/css/main.e7bfd6d5.chunk.css.map",
     "static/js/2.5c2475ad.chunk.js.LICENSE.txt": "/wallet_conversor/static/js/2.5c2475ad.chunk.js.LICENSE.txt",
     "static/media/wallet.png": "/wallet_conversor/static/media/wallet.3b8cfe35.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bb052a87.js",
     "static/js/2.5c2475ad.chunk.js",
-    "static/css/main.fa1c78ab.chunk.css",
-    "static/js/main.6b06fd5d.chunk.js"
+    "static/css/main.e7bfd6d5.chunk.css",
+    "static/js/main.c79cfd2a.chunk.js"
   ]
 }
