@@ -1,19 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { userData } from '../actions';
-import '../App.css';
-import Wallet from '../image/wallet.png';
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { userData } from "../actions";
+import "../App.css";
+import Wallet from "../image/wallet.png";
 
 class Login extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       disabled: true,
     };
 
@@ -28,7 +28,8 @@ class Login extends React.Component {
   handleValidate() {
     const { email, password, disabled } = this.state;
     const number = 6;
-    const checkEmail = email.split('').includes('@') && email.split('.').includes('com');
+    const checkEmail =
+      email.split("").includes("@") && email.split(".").includes("com");
     const checkPassword = password.length >= number;
     if (checkEmail && checkPassword && disabled) {
       this.setState({ disabled: false });
@@ -48,11 +49,9 @@ class Login extends React.Component {
     return (
       <div className="container">
         <div className="brand-logo">
-          <img src={ Wallet } alt="" width="100px" />
+          <img src={Wallet} alt="" width="100px" />
         </div>
-        <div className="brand-title">
-          TRYBEWALLET
-        </div>
+        <div className="brand-title">TRYBEWALLET</div>
         <div className="inputs">
           <p className="email-text">EMAIL</p>
           <label htmlFor="email">
@@ -60,11 +59,10 @@ class Login extends React.Component {
               className="input-login1"
               type="email"
               name="email"
-              value={ email }
-              onChange={ this.handleChange }
+              value={email}
+              onChange={this.handleChange}
               data-testid="email-input"
               placeholder="example@test.com"
-              style={ { border: 'none' } }
               autoComplete="off"
             />
           </label>
@@ -75,11 +73,10 @@ class Login extends React.Component {
               className="input-login2"
               type="password"
               name="password"
-              value={ password }
-              onChange={ this.handleChange }
+              value={password}
+              onChange={this.handleChange}
               data-testid="password-input"
               placeholder="Min 6 charaters long"
-              style={ { border: 'none' } }
               autoComplete="off"
             />
           </label>
@@ -88,8 +85,8 @@ class Login extends React.Component {
           <button
             className="btn-login"
             type="button"
-            disabled={ disabled }
-            onClick={ () => dispatchEmail(email) }
+            disabled={disabled}
+            onClick={() => dispatchEmail(email)}
           >
             Entrar
           </button>
@@ -98,7 +95,8 @@ class Login extends React.Component {
           Forgot password?
           <a href="#paracadastro"> or Sign up</a>
         </p>
-      </div>);
+      </div>
+    );
   }
 }
 
