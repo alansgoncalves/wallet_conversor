@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2429d7a46db7874d62717c5d1ecbb381",
+    "revision": "71515e31c493a2bbad46f943a452233a",
     "url": "/wallet_conversor/index.html"
   },
   {
-    "revision": "a63cb91beb9c059c4b90",
-    "url": "/wallet_conversor/static/css/main.b1add019.chunk.css"
+    "revision": "34b586aa1e1d8fb6e1e1",
+    "url": "/wallet_conversor/static/css/main.172a2462.chunk.css"
   },
   {
     "revision": "2cfeb65032fea62668a3",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wallet_conversor/static/js/2.5c2475ad.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a63cb91beb9c059c4b90",
+    "revision": "34b586aa1e1d8fb6e1e1",
     "url": "/wallet_conversor/static/js/main.5ebdbf30.chunk.js"
   },
   {
