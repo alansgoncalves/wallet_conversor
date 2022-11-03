@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { deleteTask } from '../actions';
-import '../Header.css';
-import Edit2 from '../image/edit2.png';
-import Delete from '../image/delete.png';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { deleteTask } from "../actions";
+import "../Header.css";
+import Edit2 from "../image/edit2.png";
+import Delete from "../image/delete.png";
 
 class Tabela extends Component {
   delete(id) {
     const { dispatchDeleteExpense } = this.props;
     return (
       <input
-        className='delete-button'
+        className="delete-button"
         type="image"
-        src={ Delete }
+        src={Delete}
         alt=""
         data-testid="delete-btn"
-        onClick={ () => dispatchDeleteExpense(id) }
+        onClick={() => dispatchDeleteExpense(id)}
         width="27px"
       />
     );
@@ -26,12 +26,12 @@ class Tabela extends Component {
     const { expenses, editForm } = this.props;
     return (
       <input
-        className='edit-button'
+        className="edit-button"
         type="image"
-        src={ Edit2 }
+        src={Edit2}
         alt=""
         data-testid="edit-btn"
-        onClick={ () => editForm(expenses.find((expense) => expense.id === id)) }
+        onClick={() => editForm(expenses.find((expense) => expense.id === id))}
         width="39px"
         padding="10px"
       />
@@ -54,35 +54,42 @@ class Tabela extends Component {
             <th>Moedas de conversão</th>
             <th>Editar | Excluir</th>
           </tr>
-          { expenses.map(({
-            id,
-            value,
-            description,
-            currency,
-            method,
-            tag,
-            exchangeRates,
-          }) => (
-            <tr key={ id.toFixed(2) }>
-              <td>{ description }</td>
-              <td>{ tag }</td>
-              <td>{ method }</td>
-              <td>{ value }</td>
-              <td>{ currency }</td>
-              <td>{ Number(exchangeRates[currency].ask).toFixed(2) }</td>
-              <td>
-                {
-                  (Number(exchangeRates[currency].ask) * Number(value))
-                    .toFixed(2)
-                }
-              </td>
-              <td>{ exchangeRates[currency].name }</td>
-              <td>
-                { this.edit(id) }
-                { this.delete(id) }
-              </td>
-            </tr>
-          ))}
+          {expenses.map(
+            ({
+              id,
+              value,
+              description,
+              currency,
+              method,
+              tag,
+              exchangeRates,
+            }) => (
+              <tr key={id.toFixed(2)}>
+                <td aria-label="Descrição">{description}</td>
+                <td aria-label="Tag">{tag}</td>
+                <td aria-label="Método de pagamento">{method}</td>
+                <td aria-label="Valor">{value}</td>
+                <td aria-label="Moeda">{currency}</td>
+                <td aria-label="Câmbio utilizado">
+                  {Number(exchangeRates[currency].ask).toFixed(2)}
+                </td>
+                <td aria-label="Valor convertido">
+                  {(
+                    Number(exchangeRates[currency].ask) * Number(value)
+                  ).toFixed(2)}
+                </td>
+                <td aria-label="Moedas de conversão">
+                  {exchangeRates[currency].name}
+                </td>
+                <td aria-label="Editar | Excluir">
+                  <div className="icons">
+                    {this.edit(id)}
+                    {this.delete(id)}
+                  </div>
+                </td>
+              </tr>
+            )
+          )}
         </tbody>
       </table>
     );
