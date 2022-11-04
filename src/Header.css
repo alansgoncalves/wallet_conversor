@@ -211,6 +211,14 @@ td {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: self-start;
+  }
+
+  .form-table label {
+    padding-left: 47px;
+  }
+  #btn {
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -22,6 +22,10 @@ class Tabela extends Component {
     );
   }
 
+  goingUp() {
+    window.scrollTo(0, 0);
+  }
+
   edit(id) {
     const { expenses, editForm } = this.props;
     return (
