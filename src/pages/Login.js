@@ -53,8 +53,8 @@ class Login extends React.Component {
         </div>
         <div className="brand-title">TRYBEWALLET</div>
         <div className="inputs">
-          <p className="email-text">EMAIL</p>
           <label htmlFor="email">
+            <p className="email-text">EMAIL</p>
             <input
               className="input-login1"
               type="email"

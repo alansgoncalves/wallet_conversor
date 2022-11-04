@@ -41,16 +41,24 @@
 }
 
 .container {
-  position: relative;
-  /* width: 350px; */
+  /* position: relative; */
+  width: 350px;
   height: 500px;
   border-radius: 20px;
-  padding: 40px;
-  box-sizing: border-box;
+  /* padding: 40px; */
+  /* box-sizing: border-box; */
   background: #ecf0f3;
   box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
-  /* margin: auto; */
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 20px;
+  padding-top: 21px;
+}
+
+@media screen and (max-width: 540px) {
+  .container {
+    width: 100%;
+  }
 }
 
 .brand-logo {
@@ -65,25 +73,29 @@
 .input-login1 {
   background: #ecf0f3;
   padding: 10px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   height: 20px;
   font-size: 14px;
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   width: 176px;
-  margin-left: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }
 
 .input-login2 {
   background: #ecf0f3;
   padding: 10px;
-  padding-left: 20px;
+  /* padding-left: 20px; */
   height: 20px;
   font-size: 14px;
   border-radius: 50px;
   box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
   width: 176px;
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
 }
 
 .inputs {
@@ -93,14 +105,13 @@
 
 .email-text,
 .password-text {
-  text-align: left;
-  margin-left: 31px;
+  text-align: center;
   margin-bottom: 5px;
   margin-top: 5px;
 }
 
 .btn-login {
-  margin-top: 40px;
+  margin-top: 20px;
   background: #2fc18c;
   height: 40px;
   border-radius: 20px;
@@ -111,7 +122,13 @@
   border: none;
   outline: none;
   width: 170px;
-  margin-left: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: auto;
+  text-align: center;
+  margin-right: auto;
+  align-items: center;
 }
 
 label {
@@ -124,10 +141,12 @@ label {
   font-size: 1.8rem;
   color: #2fc18c;
   letter-spacing: 1px;
-  margin-left: 23px;
+  text-align: center;
 }
 
 .link {
   font-size: 10px;
-  margin-left: 65px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
