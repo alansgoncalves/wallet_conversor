@@ -50,6 +50,10 @@ class Wallet extends Component {
       exchangeRates: form.exchangeRates,
     });
     btnName = true;
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   handleClick() {
@@ -65,6 +69,7 @@ class Wallet extends Component {
       exchangeRates: {},
     });
     btnName = false;
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
   submitChange() {
@@ -80,6 +85,7 @@ class Wallet extends Component {
       exchangeRates: {},
     });
     btnName = false;
+    window.scrollTo(0, document.body.scrollHeight);
   }
 
   form() {
