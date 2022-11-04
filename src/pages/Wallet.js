@@ -88,7 +88,7 @@ class Wallet extends Component {
     return (
       <form className="form-table">
         <label htmlFor="value" id="label-task">
-          Valor
+          Valor:
           <input
             type="text"
             value={value}
@@ -98,7 +98,7 @@ class Wallet extends Component {
           />
         </label>
         <label htmlFor="currency">
-          Moeda
+          Moeda:
           <select value={currency} id="currency" onChange={this.change}>
             {currencies.map((coin, index) => (
               <option key={index} value={coin}>
@@ -108,7 +108,7 @@ class Wallet extends Component {
           </select>
         </label>
         <label htmlFor="method" className="label-task">
-          Método de Pagamento
+          Método de Pagamento:
           <select value={method} id="method" onChange={this.change}>
             <option value="Dinheiro">Dinheiro</option>
             <option value="Cartão de débito">Cartão de débito</option>
@@ -116,7 +116,7 @@ class Wallet extends Component {
           </select>
         </label>
         <label htmlFor="tag">
-          Tag
+          Tag:
           <select value={tag} id="tag" onChange={this.change}>
             <option value="Lazer">Lazer</option>
             <option value="Trabalho">Trabalho</option>
@@ -126,7 +126,7 @@ class Wallet extends Component {
           </select>
         </label>
         <label htmlFor="description">
-          Descrição
+          Descrição:
           <input
             type="text"
             value={description}
